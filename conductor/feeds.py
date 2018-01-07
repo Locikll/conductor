@@ -7,7 +7,9 @@ from .config import witness
 from .markets import Markets
 from .utils import unlock_steempy_wallet
 
-steem = Steem()
+Nodes = ['wss://api.steemit.com','wss://steemd.steemitdev.com','wss://node.steem.ws','wss://this.piston.rocks','wss://gtg.steem.house:8090','wss://seed.bitcoiner.me']
+
+steem = Steem(nodes=Nodes)
 settings = {
     "sleep_time_seconds": 10 * 60,
     "minimum_spread_pct": 2.0,
