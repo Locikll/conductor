@@ -44,7 +44,7 @@ def refresh_price_feeds(witness_name, support_peg=False):
     # publish new price is spread widens
     spread = abs(markets.calc_spread(old_adj_price, quote_adj_current_price))
     print("\nSpread between prices: %.3f%%" % spread)
-    if spread > 25:
+    if spread > 29:
         print("Possibly invalid spread (%.2f%%), ignoring..." % spread)
     elif spread > settings['minimum_spread_pct']:
         steem.commit.witness_feed_publish(steem_usd, quote=quote, account=witness_name)
